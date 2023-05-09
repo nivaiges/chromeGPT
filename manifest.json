@@ -1,22 +1,13 @@
 {
     "manifest_version": 3,
-    "name": "My Extension Name",
+    "name": "canvasGPT",
     "description": "Use chatGPT for your canvas questions!",
     "version": "1.0",
-    "icons": {
-      "16": "images/logo.jpg",
-      "48": "images/logo.jpg",
-      "128": "images/logo.jpg"
-    },
-    "action": {
-        "default_icon": "images/logo.jpg",
-        "default_title": "canQuizGPT",
-        "default_popup": ""
-    },
-    "host_permissions": [
-        "https://google.com/*"
-    ],
-    "background": {
-        "service_worker": "background.js"
+   "content_scripts": [
+    {
+        "matches" : ["*://*.instructure.com/courses/*/quizzes/*"],
+        "css" : [],
+        "js" : ["content.js"]
     }
+   ]
 }
